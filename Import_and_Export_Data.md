@@ -37,3 +37,20 @@ mongodb+srv://user:password@clusterURI.mongodb.net/database
 # 2. Use @ to access unique Atlas cluster
 # 3. Target database name
 ```
+
+## Import
+
+Import data in BSON:
+
+```bash
+mongorestore --uri "<Atlas Cluster URI>"
+             --drop dump
+```
+
+Import data in JSON:
+
+```bash
+mongoimport --uri "<Atlas Cluster URI>"
+            --drop=<filename>.json
+            --collection=<collection name> # optional
+```
