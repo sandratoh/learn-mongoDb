@@ -49,3 +49,18 @@ Use `pretty()` to view data in more readable way
 ```bash
 db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()
 ```
+
+Use `findOne()` to find **one** result, use `find()` to find **all** matching results
+
+Use `$exists` operator to find all documents that contain / not contain a field
+
+- Syntax: `{ field: { $exists: <boolean> }}`
+
+- When `<boolean>` is `true`, query returns all document that has the field including if the value is `null`
+
+- When `<boolean>` is `false`, query returns only the doccuments that do not contain the field
+
+```bash
+# Find all documents in the `inspections` collection that has a `test` field
+db.inspections.find({"test": {"exists": true}})
+```
